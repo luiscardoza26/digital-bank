@@ -1,0 +1,26 @@
+* {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .MuiCard-root,
+  .MuiPaper-root,
+  .MuiAppBar-root {
+    transition: background-color 0.3s ease, 
+                box-shadow 0.3s ease;
+  }
+  
+  [data-theme='dark'] {
+    color-scheme: dark;
+  }
+  
+  [data-theme='light'] {
+    color-scheme: light;
+  }
