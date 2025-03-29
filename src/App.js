@@ -9,7 +9,6 @@ import Services from './components/Services/Services';
 import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import LoadingSpinner from './components/Common/LoadingSpinner';
 import FloatingActionButton from './components/Common/FloatingActionButton';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider as CustomThemeProvider, useTheme } from './context/ThemeContext';
@@ -18,25 +17,13 @@ import getTheme from './styles/theme';
 function AppContent() {
   const { darkMode } = useTheme();
   const theme = getTheme(darkMode ? 'dark' : 'light');
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
-
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
   }, []);
-
-  if (loading) {
-    return <LoadingSpinner />;
-  }
 
   return (
     <ThemeProvider theme={theme}>
